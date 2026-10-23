@@ -84,16 +84,11 @@ def compare_bible(verse, api_key):
         raise ValueError("We could not load the translation you asked for. Please try again later.")
     return bible["name"], content
 
-
-
 # the following function will print print our bible verse and will also compare two of the translations at the same time.
-
 # This function lets the user read a verse and compare translations.
 def read_verse(reference, compare=False, api_key=""):
-
     try:
         verse = verse_retrieval(reference)
-
         print(f"\n{verse['reference']} - World English Bible")
         print("-" * 45)
         print(" ".join(verse["text"].split()))
@@ -104,7 +99,6 @@ def read_verse(reference, compare=False, api_key=""):
 
     if not compare:
         return
-
     if not api_key:
         print("You need unfortunately an API key to compare both translations.")
         return
@@ -124,8 +118,6 @@ def read_verse(reference, compare=False, api_key=""):
 
     except (requests.RequestException, ValueError, KeyError, TypeError) as error:
         print("Sorry, could not compare the following verses:", error)
- 
-
 
 # I made a simple table to show the available Bible verses that are able to be retrieved. 
 def choose_verse(bible_verses):
@@ -148,9 +140,6 @@ def choose_verse(bible_verses):
             print("Kindly choose another bible verse from the list... ")
     except ValueError:
         print("Invalid bible verse (number). Please try again!")
-
-
-
 
 # This is the main menu where the user chooses what to do.
 def main():
