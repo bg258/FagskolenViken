@@ -1,63 +1,62 @@
-# **Arbeidskrav 1 - Programmering**
+# **Arbeidskrav 1 – Programmering**
+I denne oppgaven var hovedmålet mitt å lage et program som gjør det enkelt å finne og lese bibelvers, uten at man trenger å huske alle bible vers.
+Programmet skal kjøres i terminalen og lar deg:
 
-For the following assignment the main focus was to make it easy to locate and read Bible verses without having to memorize each reference.
+- Se gjennom en tabell med 8 forskjellige bibelvers.
+- Søke etter et bestemt bibelvers ved å skrive inn en henvisning (for eksempel John 3:16).
+- Få et tilfeldig bibelvers fra Bibelen.
+- Sammenligne det samme bibelverset ved hjelp av to forskjellige bibel-API-er.
 
-The assignment runs in the terminal and lets you:
-- Look through a table which lists 8 suggested Bible verses.
-- The main file lets you search for a verse. For that, you will need to enter a reference (for example John 3:16)
-- Selects one random verse from the bible. 
-- The main file will also let you use two different Bible APIs to compare the same verse.
+**NB:** Jeg har en IT utdanning fra før og mye av har jeg jobbet med før. Dette er et prosjekt som jeg har jobbet med før som jeg har faktisk klart å ta opp igjen. Jeg har kommentert på koden i engelsk for å gjøre det lettere for Richard å rette og komme med tilbakemeldinger.  
 
-## APIs used
+## API-er som er brukt
 
-My program gets data from two different API sources:
+Programmet mitt henter informasjon fra to forskjellige API-er:
 
-1. **[bible-api.com](https://bible-api.com/)** – gets the text of Bible verses. This API does not need a key.
-2. **[API.Bible](https://api.bible/)** – gets a verse from another English Bible translation. This API needs an API key.
+1. **[bible-api.com](https://bible-api.com/)** – henter teksten til bibelvers. Denne API-en krever ingen API-nøkkel.
+2. **[API.Bible](https://api.bible/)** – henter bibelvers fra en annen engelsk bibeloversettelse. Denne API-en krever en egen API-nøkkel.
 
-The API.Bible key is loaded from the local `.env` file instead of being written in the Python code. In this case, my repository is a private one, so I do not need to worry about leaking the private key.
+API-nøkkelen til API.Bible blir hentet fra en lokal `.env`-fil i stedet for å bli skrevet direkte i Python-koden. I mitt tilfelle er GitHub-repositoriet privat, så nøkkelen er ikke offentlig tilgjengelig.
 
-## How can I run the following program?
-For us to being able to run the following program, we will need:
-* Python 3.10 or newer
-* Internet connection
-* Own API key from API.Bible (in this case, you dont need one since I have included my own private key)
+## Hvordan kjører jeg programmet?
 
-**Steps**
+For å kunne kjøre programmet trenger vi:
 
-1. Download the project from GitHub and open the folder in VS Code (or another editor).
-2. Open a terminal in the project folder and run the following sequence. It will install the required packages needed:
+- Python 3.10 eller nyere
+- Internettforbindelse
+- En egen API-nøkkel fra API.Bible (i dette tilfellet trenger du ikke å skaffe en, siden jeg allerede har lagt inn min egen nøkkel)
+
+**Fremgangsmåte**
+
+1. Last ned prosjektet fra GitHub og åpne mappen i VS Code (eller en annen kodeeditor).
+
+2. Åpne terminalen i prosjektmappen og kjør følgende kommando for å installere pakkene som trengs:
 
    ```bash
    python3 -m pip install -r requirements.txt
    ```
 
-3. Go to [api.bible](https://api.bible/), create an account and get an API key.
-4. Create a file called `.env` in the same folder as `main.py` and add this line:
+3. Gå til [api.bible](https://api.bible/), opprett en konto og skaff deg en API-nøkkel.
+
+4. Opprett en fil som heter `.env` i samme mappe som `main.py`, og legg inn følgende linje:
 
    ```env
    API_BIBLE_KEY=OcmdrFRICnENxcWh3IjgD
+
    ```
 
-5. Start the program:
+5. Start programmet:
 
    ```bash
    python3 main.py
    ```
 
-**NB:** You only need to download the requirements and run the main file, since I have already included a private key.
+**NB:** Du trenger egentlig bare å installere pakkene fra `requirements.txt` og kjøre `main.py`, siden jeg allerede har inkludert min egen API-nøkkel.
 
-****
-When the program runs you will have the option to choose between different tasks from the menu. 
+---
 
-To check that **both APIs** work, you can try the option **(4)** and enter `John 3:16`. This option will compare one verse at a time. And Vuala! 
+Når programmet starter, får du opp en meny der du kan velge mellom forskjellige funksjoner.
 
-Try the different optiosn to learn more about jesus and the bible. 
+For å sjekke at **begge API-ene** fungerer, kan du velge alternativ **(4)** og skrive inn `John 3:16`. Dette alternativet lar deg sammenligne ett bibelvers om gangen.
 
-
-## Project files
-
-- `main.py` – the Python program, including the menu and API requests.
-- `requirements.txt` – the packages needed to run the program.
-- `.gitignore` – prevents the API key and temporary Python files from being added to GitHub.
-- `README.md` – information about the project and how to run it.
+Prøv gjerne de forskjellige alternativene for å lære mer om Jesus og Bibelen.
