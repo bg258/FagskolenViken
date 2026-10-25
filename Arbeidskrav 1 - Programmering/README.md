@@ -20,12 +20,6 @@ API-nøkkelen til API.Bible blir hentet fra en lokal `.env`-fil i stedet for å 
 
 ## Hvordan kjører jeg programmet?
 
-For å kunne kjøre programmet trenger vi:
-
-- Python 3.10 eller nyere
-- Internettforbindelse
-- En egen API-nøkkel fra API.Bible (i dette tilfellet trenger du ikke å skaffe en, siden jeg allerede har lagt inn min egen nøkkel)
-
 **Fremgangsmåte**
 
 1. Last ned prosjektet fra GitHub og åpne mappen i VS Code (eller en annen kodeeditor).
