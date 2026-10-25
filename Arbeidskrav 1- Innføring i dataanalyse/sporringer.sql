@@ -1,14 +1,16 @@
 -- 1. INNER JOIN: Viser bare bestillinger som har en kunde tilknyttet dem. ---
-SELECT
-    b.bestilling_id,
-    k.navn,
-    k.by,
-    b.dato,
-    b.belop
-FROM bestillinger AS b
-INNER JOIN kunder AS k
-    ON b.kunde_id = k.kunde_id
-ORDER BY b.bestilling_id;
+SELECT 
+    k.kunde_id, 
+    k.navn, 
+    k.by, 
+    b.bestilling_id, 
+    b.dato, 
+    b.belop, 
+    b.status 
+FROM kunder AS k 
+LEFT JOIN bestillinger AS b 
+    ON k.kunde_id = b.kunde_id 
+ORDER BY k.kunde_id, b.bestilling_id; 
 
 -- 2. LEFT JOIN: Viser alle kunder i tillegg til kunder uten bestillinger. ---
 SELECT
